@@ -1,17 +1,14 @@
 # bilibili-spider
+
 使用免费代理池的 bilibili 分区视频爬虫
 
 程序设计训练课程作业，编写时使用 `Python 3.8.7`
-
-
 
 ## 致谢
 
 - 免费代理池使用 [ProxyPool 爬虫代理IP池](https://github.com/jhao104/proxy_pool)
 
 - UserAgent 列表来自 [List-of-user-agents](https://github.com/tamimibrahim17/List-of-user-agents)
-
-
 
 ## 使用说明
 
@@ -41,7 +38,7 @@
 
 - 进入容器： `docker exec -it redis /bin/bash`
 
-- 使用 ` redis-cli` 连接数据库： ` redis-cli`
+- 使用 `redis-cli` 连接数据库： `redis-cli`
 
 - 设置密码（Redis6开始似乎没有密码无法连接）： `config set requirepass ********`
 
@@ -50,19 +47,17 @@
 ##### 部署 ProxyPool 本体
 
 - 使用 [ProxyPool 爬虫代理IP池](https://github.com/jhao104/proxy_pool) 的教程
-- 使用免费代理池可适当调整增加文件中的 `POOL_SIZE_MIN `
+- 使用免费代理池可适当调整增加文件中的 `POOL_SIZE_MIN`
 
 #### 使用代理池
 
-- 在 `config.ini` 中将 `use_proxy ` 设为 `true` ，并将 `proxy_url` 设为代理池的地址，即可使用代理池
-- 当 `allow_fallback ` 为 `true` 时，若从代理池获取代理失败，则不使用代理（不建议启用，因为线程中相邻请求间不设间隔）
-- 当 `allow_delete  ` 为 `true` 时，会通知代理池删除请求失败时使用的代理服务器（使用免费代理池不建议启用，因为代理质量较差，大部分为间隔可用）
+- 在 `config.ini` 中将 `use_proxy` 设为 `true` ，并将 `proxy_url` 设为代理池的地址，即可使用代理池
+- 当 `allow_fallback` 为 `true` 时，若从代理池获取代理失败，则不使用代理（不建议启用，因为线程中相邻请求间不设间隔）
+- 当 `allow_delete` 为 `true` 时，会通知代理池删除请求失败时使用的代理服务器（使用免费代理池不建议启用，因为代理质量较差，大部分为间隔可用）
 
 ### 线程数量说明
 
-- 若使用免费代理池，可适量增加线程数 `threads `（如调至 100），并相应扩大缓冲区大小 `waiting_list `
-
-
+- 若使用免费代理池，可适量增加线程数 `threads`（如调至 100），并相应扩大缓冲区大小 `waiting_list`
 
 ## 设计简介
 
