@@ -59,6 +59,10 @@
 
 - 若使用免费代理池，可适量增加线程数 `threads`（如调至 100），并相应扩大缓冲区大小 `waiting_list`
 
+### `Checker` 说明
+
+- 运行 `checker.py` 可以检查数据完整性，若不完整会抛出对应异常
+
 ## 设计简介
 
 ### 各文件简介
@@ -66,6 +70,7 @@
 - `spider.py`：爬虫主程序，载入配置、实现爬虫各功能
 - `tools.py`：网络工具，获取代理服务器、随机 `UserAgent` 和国内 `IP`
 - `database.py`：数据库工具，提供爬虫与数据库交互接口
+- `checker.py`：数据检验工具
 - `config.ini`：配置文件
 - `ip_list.json`：国内 `IP` 段列表
 - `user_agent.json`：`UserAgent` 列表
