@@ -200,7 +200,7 @@ class VideoSpiderWithoutAPI(threading.Thread):
                 logging.debug('获取视频 {} 失败. 网络错误. 重试.'.format(target[0]))
                 retry_queue.put(target)
             except AttributeError:
-                logging.error('获取视频 {} 失败. 格式错误. 重试.'.format(target[0]))
+                logging.warning('获取视频 {} 失败. 格式错误. 重试.'.format(target[0]))
                 retry_queue.put(target)
             except:
                 logging.error('获取视频 {} 失败. 未知错误. 退出.'.format(target[0]))
