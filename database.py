@@ -184,6 +184,10 @@ class Database:
         '''获取未爬取评论的视频列表'''
         return self.cursor.execute('SELECT aid from VIDEO WHERE aid NOT IN (SELECT oid FROM COMMENT)').fetchall()
 
+    def get_broken_user_list(self):
+        '''获取未爬取用户的视频列表'''
+        return self.cursor.execute('SELECT aid,bvid,cid from VIDEO WHERE VIDEO.owner NOT IN (SELECT mid FROM USER)').fetchall()
+
     def update_video_pic(self, aid):
         '''更新视频封面爬取标识
 

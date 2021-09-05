@@ -57,7 +57,7 @@ START_FLAG = True
 WAIT_TIME = 5
 
 # 初始化任务队列
-task_queue = Queue(maxsize=1000)
+task_queue = Queue(maxsize=WL_MAX)
 retry_queue = Queue()
 video_queue = Queue()
 user_queue = Queue()
@@ -436,6 +436,10 @@ class SpiderDB(threading.Thread):
             user_pic_queue.put(data)
         for data in self.db.get_comment_list():
             comment_queue.put(data)
+
+        # 根据重新爬取未成功入库的用户信息
+        for data in self.db.get_broken_user_list():
+            task_queue.put((data[0], data[1], data[2], ST_PN))
 
         while START_FLAG or (not self.finish):
             # 存入视频结果, 加入图片与评论任务队列
