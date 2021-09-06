@@ -4,7 +4,7 @@
 
 ## 一、投稿时间
 
-![pic0](analysize\pic0.png)
+![pic0](analysize/pic0.png)
 
 - 统计方法：统计每日每小时内发布的视频数量，相同小时段进行累加
 - 统计程序：见 `analysize.py` 中的 `pic01()` 函数
@@ -22,7 +22,7 @@
 
 ## 三、标签统计
 
-![pic2](analysize/pic2-1.png)
+<img src="analysize/pic2-1.png" alt="pic2" style="zoom:50%;" />
 
 ![pic2](analysize/pic2-0.png)
 
