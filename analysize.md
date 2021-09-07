@@ -22,7 +22,7 @@
 
 ## 三、标签统计
 
-<img src="analysize/pic2-1.png" alt="pic2" style="zoom:50%;" />
+<p align="center"><img src="analysize/pic2-1.png" alt="pic2-1" width = "50%"/></p>
 
 ![pic2](analysize/pic2-0.png)
 
